@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    <form [formGroup]="signupForm">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <div class="form-content" fxLayout="column" fxLayoutAlign="start start">
         <mat-label>Full Name</mat-label>
         <mat-form-field appearance="outline" >

@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <form [formGroup]="loginForm">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <div class="form-content" fxLayout="column" fxLayoutAlign="start start">
         <mat-label>Email Id</mat-label>
         <mat-form-field appearance="outline" >
