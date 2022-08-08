@@ -30,6 +30,8 @@ export class LoginComponent implements OnInit {
       }
       this.user.login(data).subscribe((res:any)=>{
         console.log(res);
+        localStorage.setItem('token',res.data.token);
+        localStorage.setItem('fullName',res.data.fullName);
       });
     }
     else{

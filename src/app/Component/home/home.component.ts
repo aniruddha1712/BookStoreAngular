@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  fullname='';
+  fullName:any='';
   constructor() { }
 
   ngOnInit(): void {
+    this.fullName = localStorage.getItem('fullName');
   }
 
+  logOut(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("fullName");
+  }
 }

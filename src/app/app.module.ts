@@ -12,12 +12,17 @@ import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+
 import { AppComponent } from './app.component';
 import { SignupComponent } from './Component/signup/signup.component';
 import { LoginComponent } from './Component/login/login.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotpasswordComponent } from './Component/forgotpassword/forgotpassword.component';
 import { HomeComponent } from './Component/home/home.component';
+import { GetAllBooksComponent } from './Component/get-all-books/get-all-books.component';
+import { NonUserComponent } from './Component/non-user/non-user.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,9 @@ import { HomeComponent } from './Component/home/home.component';
     SignupComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    HomeComponent
+    HomeComponent,
+    GetAllBooksComponent,
+    NonUserComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +47,9 @@ import { HomeComponent } from './Component/home/home.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

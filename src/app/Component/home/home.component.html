@@ -2,7 +2,7 @@
   <mat-toolbar fxLayoutAlign="space-between center">
     <div class="header" fxLayout="row" fxLayoutAlign="start center">
       <div class="logo">
-        <img src="../../../assets/education.svg">
+        <img src="../../../assets/education.svg" routerLink="/home">
       </div>
       <div class="logo-name">
         <span class="text">Bookstore</span>
@@ -15,10 +15,20 @@
 
       <div class="profile-cart" fxLayout="row">
         <button class="icons" mat-flat-button>
-          <div fxLayout="column" fxLayoutAlign="center center"[matMenuTriggerFor]="noprofile">
+          <div fxLayout="column" fxLayoutAlign="center center"[matMenuTriggerFor]="fullName==(''||undefined)? noprofile : profile">
             <img src="/assets/person.svg" style="margin: 0px 10px;" width="24px" height="24px">
             <span fxLayoutAlign="center center"></span>
           </div>
+        <mat-menu #profile="matMenu" >
+            <span class="profile"><b>Hello {{fullName}},</b></span>
+            <button mat-flat-button class="profile-g" style="padding-left: 0px;" routerLink="/home/profile">
+              <img src="/assets/person-g.svg" width="20px" height="20px"><span>Profile</span></button>
+            <button mat-flat-button class="profile-g" style="padding-left: 0px;" routerLink="/home/orders">
+              <img src="/assets/orders-gray.svg" width="18px" height="18px"><span>My Orders</span></button>
+            <button mat-flat-button class="profile-g" style="padding-left: 0px;" routerLink="/home/wishlist">
+              <img src="/assets/favorite-gray.svg" width="20px" height="20px"><span>My Wishlist</span></button>
+            <button class="logout" mat-stroked-button color="warn" style="margin-right: 50px;" (click)="logOut()">Logout</button>
+        </mat-menu>
         <mat-menu #noprofile="matMenu" >
             <span class="profile"><b>Welcome</b></span>
             <div class="profile-g"><span>To acsess account and manage orders</span></div>
@@ -36,17 +46,23 @@
         <span fxLayoutAlign="center center" >Profile</span>
         </button>
 
-        <button class="icons" mat-flat-button routerLink="/home/cart">
+        <button class="icons" mat-flat-button routerLink="/home/cart" *ngIf="fullName!=(''||undefined||null)">
             <div fxLayout="column" fxLayoutAlign="center center" >
                 <img src="/assets/cart.svg" style="margin: 0px 10px;" width="24px" height="24px">
                 <span fxLayoutAlign="center center" >Cart</span>
             </div>
         </button>
+        <button class="icons" mat-flat-button routerLink="/home/nonuser" *ngIf="fullName==(''||undefined||null)">
+          <div fxLayout="column" fxLayoutAlign="center center" >
+              <img src="/assets/cart.svg" style="margin: 0px 10px;" width="24px" height="24px">
+              <span fxLayoutAlign="center center" >Cart</span>
+          </div>
+      </button>
       </div>
     </div>
   </mat-toolbar>
 
-  <div style=" margin: 10px;">
+  <div class="display-book">
     <router-outlet></router-outlet>
   </div>
 
