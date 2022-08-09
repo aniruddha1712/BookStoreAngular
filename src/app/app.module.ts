@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './Component/signup/signup.component';
@@ -23,6 +24,7 @@ import { ForgotpasswordComponent } from './Component/forgotpassword/forgotpasswo
 import { HomeComponent } from './Component/home/home.component';
 import { GetAllBooksComponent } from './Component/get-all-books/get-all-books.component';
 import { NonUserComponent } from './Component/non-user/non-user.component';
+import { QuickviewComponent } from './Component/quickview/quickview.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { NonUserComponent } from './Component/non-user/non-user.component';
     ForgotpasswordComponent,
     HomeComponent,
     GetAllBooksComponent,
-    NonUserComponent
+    NonUserComponent,
+    QuickviewComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import { NonUserComponent } from './Component/non-user/non-user.component';
     MatMenuModule,
     MatToolbarModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

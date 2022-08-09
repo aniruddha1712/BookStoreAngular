@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BookService } from 'src/app/Services/bookService/book.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class GetAllBooksComponent implements OnInit {
   bookList:any;
   sortBy:any="Sort by relevence";
   defaultImage:any="https://blog.springshare.com/wp-content/uploads/2010/02/nc-md.gif";
-  constructor(private bookService: BookService) { }
+
+  constructor(private bookService: BookService,private router: Router) { }
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -42,5 +44,8 @@ export class GetAllBooksComponent implements OnInit {
   newestFirst(){
      this.bookList = this.bookList.sort((x: any, y: any) => y.bookId - x.bookId);
      this.sortBy="Newest First";
+  }
+  quickView(bookId:any){
+    this.router.navigateByUrl('/home/quickview/' + bookId);
   }
 }

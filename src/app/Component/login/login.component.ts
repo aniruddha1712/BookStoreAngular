@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/Services/userService/user.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm !: FormGroup;
   hide=true;
-  constructor(private fb:FormBuilder,private user:UserService) { }
+  constructor(private fb:FormBuilder,private user:UserService,private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
         console.log(res);
         localStorage.setItem('token',res.data.token);
         localStorage.setItem('fullName',res.data.fullName);
+        this.router.navigateByUrl('/home');
       });
     }
     else{

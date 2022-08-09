@@ -19,4 +19,14 @@ export class BookService {
     }
     return this.http.getService('https://localhost:44342/Book/getallbooks',false,header)
   }
+  getBookById(bookId:any){
+    console.log("Getting books");
+
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+      })
+    }
+    return this.http.getService(`https://localhost:44342/Book/getbookbyId/${bookId}`,false,header)
+  }
 }

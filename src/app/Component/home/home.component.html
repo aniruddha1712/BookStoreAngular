@@ -43,7 +43,8 @@
               <span>My Wishlist</span>
             </button>
         </mat-menu>
-        <span fxLayoutAlign="center center" >Profile</span>
+        <span fxLayoutAlign="center center" *ngIf="fullName!=(''||undefined||null)">{{fullName}}</span>
+        <span fxLayoutAlign="center center" *ngIf="fullName==(''||undefined||null)">Profile</span>
         </button>
 
         <button class="icons" mat-flat-button routerLink="/home/cart" *ngIf="fullName!=(''||undefined||null)">
