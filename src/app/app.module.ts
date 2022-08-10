@@ -25,6 +25,10 @@ import { HomeComponent } from './Component/home/home.component';
 import { GetAllBooksComponent } from './Component/get-all-books/get-all-books.component';
 import { NonUserComponent } from './Component/non-user/non-user.component';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
+import { CartComponent } from './Component/cart/cart.component';
+import { WishlistComponent } from './Component/wishlist/wishlist.component';
+import { OrderComponent } from './Component/order/order.component';
+import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { QuickviewComponent } from './Component/quickview/quickview.component';
     HomeComponent,
     GetAllBooksComponent,
     NonUserComponent,
-    QuickviewComponent
+    QuickviewComponent,
+    CartComponent,
+    WishlistComponent,
+    OrderComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

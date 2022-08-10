@@ -40,4 +40,16 @@ export class UserService {
     }
     return this.http.postService(`https://localhost:44342/api/User/forgotpassword/${data.email}`,data,false,header)
   }
+
+  resetPass(data:any,token:any){
+    console.log(data);
+
+    let header={
+      headers: new HttpHeaders({
+        'Content-Type' : 'application/json',
+        'Authorization': 'Bearer '+token
+      })
+    }
+    return this.http.putService('https://localhost:44342/api/User/resetpassword',data,true,header)
+  }
 }
