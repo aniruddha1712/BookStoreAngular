@@ -15,11 +15,12 @@
       <div fxLayoutAlign="space-between center" class="buttons">
         <button class="bag" mat-flat-button (click)="addToCart()" *ngIf="book?.bookQuantity!=0 && !addedToCart">ADD TO BAG</button>
         <button class="bag" mat-flat-button (click)="notifyMe()" *ngIf="book?.bookQuantity==0">NOTIFY ME</button>
-        <div *ngIf="addedToCart" fxLayout="row" fxLayoutAlign="space-between center">
+        <button class="bag" mat-flat-button  *ngIf="addedToCart">ADD TO BAG</button>
+        <!-- <div *ngIf="addedToCart" fxLayout="row" fxLayoutAlign="space-between center">
           <button class="cart-plus">-</button>
           <button class="bookinCart">1</button>
           <button class="cart-plus">+</button>
-        </div>
+        </div> -->
         <button class="wishlist" mat-flat-button (click)="addToWishlist()"><img src="/assets/favorite_white_24dp.svg" width="18px" height="18px" style="margin-bottom: 2px;"> WISHLIST</button>
       </div>
     </div>

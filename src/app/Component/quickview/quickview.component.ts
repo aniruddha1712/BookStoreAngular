@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { BookService } from 'src/app/Services/bookService/book.service';
+import { CartService } from 'src/app/Services/cartService/cart.service';
 import { FeedbackService } from 'src/app/Services/feedbackService/feedback.service';
+import { WishlistService } from 'src/app/Services/wishlistService/wishlist.service';
 
 @Component({
   selector: 'app-quickview',
@@ -18,7 +20,8 @@ export class QuickviewComponent implements OnInit {
   defaultImage:any="https://blog.springshare.com/wp-content/uploads/2010/02/nc-md.gif";
   addedToCart:any=false;
 
-  constructor(private activeRoute:ActivatedRoute,private bookService:BookService,private feedbackService: FeedbackService) { }
+  constructor(private activeRoute:ActivatedRoute,private bookService:BookService,private feedbackService: FeedbackService,
+    private cartService:CartService,private wishlistService:WishlistService) { }
 
   ngOnInit(): void {
     this.bookId = this.activeRoute.snapshot.paramMap.get('bookId');
@@ -59,6 +62,13 @@ export class QuickviewComponent implements OnInit {
   
   addToCart(){
     this.addedToCart=true;
+    let reqData = {
+      BookId: this.book.bookId,
+      BookInCart: 1
+    }
+    this.cartService.addToCart(reqData).subscribe((response: any) => {
+      console.log("Added to cart", response);
+    });
   }
 
   notifyMe(){
@@ -66,7 +76,12 @@ export class QuickviewComponent implements OnInit {
   }
 
   addToWishlist(){
-
+    let reqData = {
+      BookId: this.book.bookId,
+    }
+    this.wishlistService.addToWishlist(reqData).subscribe((response: any) => {
+      console.log("Added to wishlist", response);
+    });
   }
 
 }
