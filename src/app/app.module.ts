@@ -17,6 +17,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './Component/signup/signup.component';
@@ -31,6 +33,7 @@ import { WishlistComponent } from './Component/wishlist/wishlist.component';
 import { OrderComponent } from './Component/order/order.component';
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
 import { ProfileComponent } from './Component/profile/profile.component';
+import { FilterPipe } from './Pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { ProfileComponent } from './Component/profile/profile.component';
     WishlistComponent,
     OrderComponent,
     ResetPasswordComponent,
-    ProfileComponent
+    ProfileComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ import { ProfileComponent } from './Component/profile/profile.component';
     MatSelectModule,
     MatCardModule,
     MatDividerModule,
-    MatRadioModule
+    MatRadioModule,
+    MatPaginatorModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

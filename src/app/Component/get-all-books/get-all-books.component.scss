@@ -122,3 +122,15 @@ mat-card{
 .display-books{
   flex-wrap: wrap;
 }
+::ng-deep .ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: #b83551 !important;
+  color: #fefefe;
+  cursor: default;
+}
+::ng-deep .ngx-pagination {
+  display: flex !important;
+  justify-content: center;
+  margin-left: 0;
+  margin-bottom: 1rem;
+}

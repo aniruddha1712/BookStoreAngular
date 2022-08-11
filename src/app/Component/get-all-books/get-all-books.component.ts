@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BookService } from 'src/app/Services/bookService/book.service';
+import { DataService } from 'src/app/Services/dataService/data.service';
 
 @Component({
   selector: 'app-get-all-books',
@@ -12,10 +13,15 @@ export class GetAllBooksComponent implements OnInit {
   bookList:any;
   sortBy:any="Sort by relevence";
   defaultImage:any="https://blog.springshare.com/wp-content/uploads/2010/02/nc-md.gif";
+  searchString:any;
+  page: number = 1;
 
-  constructor(private bookService: BookService,private router: Router) { }
+  constructor(private bookService: BookService,private router: Router,private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.currentMessage.subscribe((response: any) => {
+      this.searchString = response
+    })
     this.getAllBooks();
   }
 
