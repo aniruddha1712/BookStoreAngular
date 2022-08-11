@@ -7,6 +7,7 @@ import { HomeComponent } from './Component/home/home.component';
 import { LoginComponent } from './Component/login/login.component';
 import { NonUserComponent } from './Component/non-user/non-user.component';
 import { OrderComponent } from './Component/order/order.component';
+import { ProfileComponent } from './Component/profile/profile.component';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
 import { SignupComponent } from './Component/signup/signup.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
     {path:'cart',component:CartComponent},
     {path:'wishlist',component:WishlistComponent},
     {path:'orders',component:OrderComponent},
+    {path:'profile',component:ProfileComponent}
     ]
   },
 ]

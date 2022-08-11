@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AppComponent } from './app.component';
 import { SignupComponent } from './Component/signup/signup.component';
@@ -29,6 +30,7 @@ import { CartComponent } from './Component/cart/cart.component';
 import { WishlistComponent } from './Component/wishlist/wishlist.component';
 import { OrderComponent } from './Component/order/order.component';
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
+import { ProfileComponent } from './Component/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { ResetPasswordComponent } from './Component/reset-password/reset-passwor
     CartComponent,
     WishlistComponent,
     OrderComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { ResetPasswordComponent } from './Component/reset-password/reset-passwor
     MatToolbarModule,
     MatSelectModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
