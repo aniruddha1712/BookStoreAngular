@@ -22,4 +22,32 @@ export class CartService {
     }
     return this.http.postService('https://localhost:44342/Cart/addtocart', reqData, true, header);
   }
+
+  getCartItems(){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer '+this.token
+      })
+    }
+    return this.http.getService('https://localhost:44342/Cart/getcartitem', true, header);
+  }
+  updateCart(cartId:any,bookQty:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer '+this.token
+      })
+    }
+    return this.http.putService(`https://localhost:44342/Cart/updatecart/${cartId}/${bookQty}`,cartId,true, header);
+  }
+  removeFromCart(cartId:any){
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer '+this.token
+      })
+    }
+    return this.http.deleteService(`https://localhost:44342/Cart/removefromcart/${cartId}`,cartId, true, header);
+  }
 }

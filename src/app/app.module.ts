@@ -34,6 +34,7 @@ import { OrderComponent } from './Component/order/order.component';
 import { ResetPasswordComponent } from './Component/reset-password/reset-password.component';
 import { ProfileComponent } from './Component/profile/profile.component';
 import { FilterPipe } from './Pipes/filter.pipe';
+import { OrderSuccessComponent } from './Component/order-success/order-success.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { FilterPipe } from './Pipes/filter.pipe';
     OrderComponent,
     ResetPasswordComponent,
     ProfileComponent,
-    FilterPipe
+    FilterPipe,
+    OrderSuccessComponent
   ],
   imports: [
     BrowserModule,

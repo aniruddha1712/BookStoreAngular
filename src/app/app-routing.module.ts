@@ -6,6 +6,7 @@ import { GetAllBooksComponent } from './Component/get-all-books/get-all-books.co
 import { HomeComponent } from './Component/home/home.component';
 import { LoginComponent } from './Component/login/login.component';
 import { NonUserComponent } from './Component/non-user/non-user.component';
+import { OrderSuccessComponent } from './Component/order-success/order-success.component';
 import { OrderComponent } from './Component/order/order.component';
 import { ProfileComponent } from './Component/profile/profile.component';
 import { QuickviewComponent } from './Component/quickview/quickview.component';
@@ -29,7 +30,8 @@ const routes: Routes = [
     {path:'cart',component:CartComponent},
     {path:'wishlist',component:WishlistComponent},
     {path:'orders',component:OrderComponent},
-    {path:'profile',component:ProfileComponent}
+    {path:'profile',component:ProfileComponent},
+    {path:'order-success',component:OrderSuccessComponent}
     ]
   },
 ]
